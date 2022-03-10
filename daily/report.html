@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <meta name="viewport" content="width=device-width, viewport-fit=cover,initial-scale=1.0" >
+        <!-- Chrome -->
+        <meta name="theme-color" content="#ff6600" >
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#4285f4">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <title>武大日报平安</title>
+        <link rel="stylesheet" href="./dailyreport.css" type='text/css'>
+    </head>
+<body>
+
+
+<div class="father">
+<img src="./image/father.png" width="100%" class="image">
+  <div class="mytext">
+    <p id="check">允许通行</p>
+  </div>
+
+<!--  <div class="passpord">-->
+<!--    <img src="https://s1.ax1x.com/2022/03/06/brJ7rj.png">-->
+<!--  </div>-->
+
+<!--  <div class="voucher">-->
+<!--    <p>通行凭证</p>-->
+<!--  </div>-->
+
+<!--  <div class="button">-->
+<!--    <img src="https://s1.ax1x.com/2022/03/06/brJTMQ.png">-->
+<!--  </div>-->
+
+  <div class="mypic">
+    <img src="./image/mypic2.png" >
+  </div>
+
+  <div id="show_time" class="time">
+    <script>
+    setInterval("fun1(show_time)",1);
+    setTimeout("func2('check')",3000);
+    function fun1(timeID){
+    var date = new Date();
+    var m =date.getMonth()+1;
+    var d = date.getDate();
+    var h = date.getHours();
+    var minute = date.getMinutes()
+    var s = date.getSeconds();
+    var sss = date.getMilliseconds() ;
+    if (sss >= 100) {
+                sss = (sss - (sss % 10)) / 10;
+            }
+    if(m<10){undefined
+    m = "0"+m;
+    }
+    if(d<10){undefined
+    d = "0"+d;
+    }
+    if(h<10){undefined
+    h = "0"+h;
+    }
+
+    if(minute<10){undefined
+    minute = "0"+minute;
+    }
+
+    if(s<10){undefined
+    s = "0"+s;
+    }
+
+    document.getElementById(timeID.id).innerHTML =  m+"-"+d+"   "+h+":"+minute+":"+s+"."+sss+"  ";
+    }
+    function func2(id) {
+        var obj = document.getElementById(id);
+        obj.innerText = '核验通行';
+        obj.style.color = '#f6941d';
+    }
+    </script>
+  </div>
+
+  <div class="container">
+    <form>
+        通行地点：<select name="address">
+            <option>信息学部南二门</option>
+        　　 <option>文理学部九区小门</option>
+        　　 <option>工学部茶港门</option>
+        　　 <option>文理学部南三门</option>
+        　　 <option>信息学部珞珈门</option>
+            <option>文理学部西门</option>
+            <option>工学部文澜门</option>
+        </select>
+        <br>
+     本人姓名：<input id='name' type=text value=''><br>
+     人员类别：<input type=text value="正常研究生" readonly><br>
+     单位名称：<input id='branch' type=text value=''><br>
+     证件类型：<input type=text value="身份证"  readonly><br>
+    </form>
+      <script>
+          function name(){
+            var names = ['王建军','李国明','张立豪','邓哲','杨远东','李寒剑','曹帅','陈宇','周清华','李攀登','吴月明','高继韬','宋小强','鲁帅成','王书成','李元建','蒋伟光',
+            '蔡耀南','张世伟','郭志强','刘帅','罗旋','伍龙生','冬晨旭','侯淼','李志浩','金晨星','侯熙尧','侯玉齐','黄若耘','王芮','徐志伟','冯望','陈伟','邓佳伟','孙昊哲','陈遥',
+                '周星宇','曹政','龙官发','苏昊','王浩然','谷同耀','陈天麒','郑自强','石根','何帅民','陈浩宇','阳虎','郑毅','曹文飞','雷克兵','聂伟民','吴子祎','周全','王欢','孙许峰',
+                '罗荣康','汪博文','蒋仁杰','吴铮杰','段曜','郭家鼎','潘子肖','邓德志', '谭佳琦', '樊建', '石亮', '刘诗宇', '曾凡皓', '陈学俊', '顾瀚文', '吴聪', '陈珊', '周轶文', '徐斌',
+                '昝子辰', '董建升', '赵凌昀', '陈德鹏', '姜迪', '张运锋', '徐焘', '吴俊', '唐榕江', '冯俊', '张开拓', '张新生', '宋荣鑫', '王晶尧', '张鹏', '张迁', '杨鑫', '蔡磊', '李吉轩', '陈晖', '李维', '强浩鹏',
+                '包佳', '文旭东', '王子健', '纪龙涛', '张志佳', '刘士豪', '左辰', '滕良文', '张祎伟', '刘超', '张敬佩', '孙京京', '邹志伟', '张杨',
+                '李晓腾', '辛卓暄', '詹高盛', '敖昕阅', '梁杰皓', '付求勇', '杨建雄', '曾佳敏', '肖百川', '张小宁', '可天浩', '李群弟', '段昱成', '陈公轻', '宋迎辉 ', '陈冠宇', '蔡鑫胤', '吕远健', '何志伟', '郭风云', '高成', '张纯松', '董帅', '黄佳琦', '刘普', '晋小虎'];
+            let index = Math.floor(Math.random() * names.length);
+            var name = names[index];
+            document.getElementById('name').value = name;
+        }
+        function branch(){
+            var branches = ['哲学学院', '国学院', '文学院', '外国语言文学学院', '新闻与传播学院','历史学院', '经济与管理学院', '法学院', '马克思主义学院',
+ '社会学院', '政治与公共管理学院', '教育科学研究院', '信息管理学院', '数学与统计学院', '物理科学与技术学院', '化学与分子科学学院', '生命科学学院', '资源与环境科学学院', '高等研究院', '动力与机械学院', '电气与自动化学院',
+ '城市设计学院', '土木建筑工程学院', '水利水电学院', '工业科学研究院', '水工程科学研究院', '电子信息学院', '计算机学院', '测绘学院', '遥感信息工程学院'];
+            let index = Math.floor(Math.random() * branches.length);
+            var branch = branches[index];
+            document.getElementById('branch').value = branch;
+        }
+            window.name();
+            window.branch();
+      </script>
+  </div>
+</div>
+
+</body>
+</html>
