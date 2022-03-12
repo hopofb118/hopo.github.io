@@ -5,8 +5,9 @@
 }
 
 .father{
-/*     overflow: hidden; */
+    overflow: hidden;
     position: relative;
+    margin-top: -21px;
 }
 
 .image{
