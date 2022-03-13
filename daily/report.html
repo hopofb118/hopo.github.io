@@ -42,7 +42,7 @@
   <div id="show_time" class="time">
     <script>
     setInterval("fun1(show_time)",1);
-    setTimeout("func2('check')",3000);
+//     setTimeout("func2('check')",3000);
     function fun1(timeID){
     var date = new Date();
     var m =date.getMonth()+1;
@@ -74,11 +74,11 @@
 
     document.getElementById(timeID.id).innerHTML =  m+"-"+d+"   "+h+":"+minute+":"+s+"."+sss+"  ";
     }
-    function func2(id) {
-        var obj = document.getElementById(id);
-        obj.innerText = '核验通行';
-        obj.style.color = '#f6941d';
-    }
+//     function func2(id) {
+//         var obj = document.getElementById(id);
+//         obj.innerText = '核验通行';
+//         obj.style.color = '#f6941d';
+//     }
     </script>
   </div>
 
